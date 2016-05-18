@@ -358,7 +358,7 @@ class Mailchimp {
 	 * Add fields for subscribers. You can use this instead of $fields param in subscribe() method.
 	 *
 	 * @param array $fields - Assocative array
-	 
+	 *
 	 * @return $this
 	 */
 	public function fields( $fields ) {
