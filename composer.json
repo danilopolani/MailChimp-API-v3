@@ -2,7 +2,7 @@
     "name": "grork/mailchimp",
     "type": "library",
     "description": "Easily manage Mailchimp API v3",
-    "keywords": ["log","logging"],
+    "keywords": ["mailchimp","api","mailchimp v3"],
     "homepage": "https://github.com/Seldaek/monolog",
     "license": "MIT",
     "authors": [
