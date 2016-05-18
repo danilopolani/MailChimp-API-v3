@@ -15,7 +15,7 @@ It's better to init the class with the following code, catching the exceptions:
 	try {
 		$mailchimp = new Grork\Mailchimp( '<API-KEY-HERE>' );
 	} catch( Exception $e ) {
-		die( "ERROR: " . $e->getMessage() );
+		die( 'Error: ' . $e->getMessage() );
 	}
 	
 # Documentation
