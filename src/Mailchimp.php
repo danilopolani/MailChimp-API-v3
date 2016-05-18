@@ -41,6 +41,7 @@ class Mailchimp {
 		$this->tmp_res = (object) [ 'response' => '' ];
 		
 		$try_api = $this->_get( '/' );
+
 		if ( $try_api->status == 401 ) throw new \Exception( 'Invalid Mailchimp API Key: ' . $try_api->detail );
 		
 	}
@@ -862,16 +863,30 @@ class Mailchimp {
 		$options[ CURLOPT_HTTPHEADER ] = $headers;
 		
 		// Rocks
-		$ch = curl_init();
-		foreach ( $options as $option => $value ) curl_setopt( $ch, $option, $value ); // Better than setopt array
-		$result = curl_exec($ch);
-		
-		curl_close( $ch );
-		$result = json_decode( $result );
-		
+		try {
+
+			$ch = curl_init();
+			if ( !$ch ) throw new \Exception( curl_error($ch), curl_errno($ch) );
+
+			foreach ( $options as $option => $value ) curl_setopt( $ch, $option, $value ); // Better than setopt array
+			$result = curl_exec($ch);
+			
+			if ( !$result ) throw new \Exception( curl_error($ch), curl_errno($ch) );
+
+			curl_close( $ch );
+			$result = json_decode( $result );
+
+		} catch ( Exception $e ) {
+
+			trigger_error( sprintf(
+				'Curl failed with error #%d: %s',
+				$e->getCode(), $e->getMessage()),
+				E_USER_ERROR );
+
+		}
+
 		return $result;
 		
 	}
-	
 	
 }
