@@ -1,6 +1,5 @@
 {
     "name": "grork/mailchimp",
-    "type": "library",
     "description": "Easily manage Mailchimp API v3",
     "keywords": ["mailchimp","api"],
     "homepage": "https://github.com/Seldaek/monolog",
