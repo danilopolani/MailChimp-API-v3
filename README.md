@@ -3,8 +3,9 @@ This class will help you to manage the MailChimp API v3.
 
 It's not complete, but the most important methods are included.
 
+***
 
-# Getting started
+### Getting started
 
 1. Install package with composer: `composer require grork/mailchimp=dev-master`. If you don't want to use composer, you can download the repository and extract it in your project folder.
 2. Require the autoload with `require __DIR__ . '/vendor/autoload.php'` or with `require __DIR__ . '/src/Mailchimp.php` (or wherever you placed the folder)
@@ -17,8 +18,10 @@ It's better to init the class with the following code, catching the exceptions:
 	} catch( Exception $e ) {
 		die( 'Error: ' . $e->getMessage() );
 	}
-	
-# Documentation
+
+***
+
+### Documentation
 
 For the documentation, you can check the [wiki][1].
 
