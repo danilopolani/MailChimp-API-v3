@@ -379,7 +379,7 @@ class Mailchimp {
 	 *
 	 * @return object
 	 */
-	public function subscribe( $email = '', $status = 'subscribed', array $fields = [], $listId = 0 ) {
+	public function subscribe( $email = '', $status = 'pending', array $fields = [], $listId = 0 ) {
 		
 		$listId = $this->_listId( $listId );
 		$email = $this->_email( $email );
